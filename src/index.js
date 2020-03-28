@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { createStore } from 'redux';
 import App from './App';
+import './index.css';
+import allReducer from './reducers';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+
+// STORE => GLOBALIZED STATE THAT WE STORE THEM
+const store = createStore(
+  allReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
