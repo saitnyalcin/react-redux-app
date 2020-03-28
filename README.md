@@ -1,4 +1,4 @@
-## Learn Redux State mangement Tool
+## Learn Redux State Management Tool
 
 The preview of the application is given below:
 
