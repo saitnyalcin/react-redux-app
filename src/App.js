@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './actions/action';
+import { increment, decrement, login } from './actions/action';
 
 function App() {
   const counter = useSelector(state => state.counter);
@@ -20,13 +20,12 @@ function App() {
       >
         -
       </button>
-      <button className="btn btn-warning ml-3"> LOGIN </button>
-
-      {isLogged ? (
-        <h3>Information that I should not see if I am not logged in</h3>
-      ) : (
-        <h3>You are not logged in yet.</h3>
-      )}
+      <button
+        onClick={() => dispatch(login())}
+        className="btn btn-warning ml-3"
+      >
+        {isLogged ? 'Logout' : 'Login'}
+      </button>
     </div>
   );
 }

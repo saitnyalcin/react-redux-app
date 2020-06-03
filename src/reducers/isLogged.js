@@ -1,9 +1,11 @@
+import { SIGNIN_ACTION } from '../constants/constants';
+
 // REDUCER => BASED ON THE ACTION, IT WILL MODIFY THE STORE
 
-const loggedReducer = (state = false, action) => {
+const loggedReducer = (state = true, action) => {
   switch (action.type) {
-    case 'SIGIN':
-      return state;
+    case SIGNIN_ACTION:
+      return !state;
 
     default:
       return state;
