@@ -1,8 +1,4 @@
-import {
-  INCREMENT_ACTION,
-  DECREMENT_ACTION,
-  SIGNIN_ACTION
-} from '../constants/constants';
+import { DECREMENT_ACTION, INCREMENT_ACTION } from '../constants/constants';
 
 // ACTION => THE ACTION THAT YOU WANNA IMPLEMENT
 
@@ -17,12 +13,5 @@ export const increment = () => {
 export const decrement = () => {
   return {
     type: DECREMENT_ACTION
-  };
-};
-
-// set the login action
-export const login = () => {
-  return {
-    type: SIGNIN_ACTION
   };
 };
